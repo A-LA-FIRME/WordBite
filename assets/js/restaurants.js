@@ -30,7 +30,7 @@ var Restaurants = {};
       restaurantsArr.forEach(function (r) {
         var restaurantHtml = `
           <div class="row p-2">
-            <div class="col-lg-4 p-0 dashed-border">
+            <div class="col-lg-4 p-0 dashed-border-right ">
               <div class="box" data-aos="zoom-in">
                 <div class="col-12 p-1">
                   <span>WordBite</span>
@@ -44,7 +44,7 @@ var Restaurants = {};
               </div>
             </div>
 
-            <div class="col-lg-4 p-0 dashed-border">
+            <div class="col-lg-4 p-0 dashed-border-right dashed-border-left">
               <div class="box" data-aos="zoom-in">
                 <div class="restaurant-img">
                   <img src="${r.image_url}" alt="">
@@ -52,7 +52,7 @@ var Restaurants = {};
               </div>
             </div>
 
-            <div class="col-lg-4 p-0 dashed-border">
+            <div class="col-lg-4 p-0 dashed-border-left">
               <div class="box" data-aos="zoom-in">
                 <div data-aos="fade-up" class="aos-init aos-animate">
                   ${r.maps_ubication}

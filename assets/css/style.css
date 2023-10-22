@@ -545,8 +545,13 @@ section {
   color: #c92626;
 }
 
-.dashed-border {
-  border: 1px dashed #ffff;
+.dashed-border-right {
+  border-right: 1px dashed #ffff;
+  padding: 1px;
+}
+
+.dashed-border-left {
+  border-left: 1px dashed #ffff;
   padding: 1px;
 }
 
