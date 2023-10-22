@@ -31,6 +31,7 @@
     integrity="sha512-T+KoG3fbDoSnlgEXFQqwcTC9AdkFIxhBlmoaFqYaIjq2ShhNwNao9AKaLUPMfwiBPL0ScxAtc+UYbHAgvd+sjQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
   <!-- Locale CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
@@ -122,17 +123,85 @@
         </ul>
 
         <div class="tab-content" id="tabsContent">
-          <div class="tabPane fade show active p-5" id="createTabPane" role="tabpanel" aria-labelledby="createTab"
+          <!-- Create -->
+          <div class="tab-pane fade show active p-5" id="createTabPane" role="tabpanel" aria-labelledby="createTab"
             tabindex="0">
-            Holi 1
+            <form action="" method="post" role="form">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group mt-3">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                  </div>
+                  <div class="form-group mt-3">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                  </div>
+                  <div class="form-group mt-3">
+                    <label for="location">Restaurant</label>
+                    <select id="location" name="location" class="form-control select2" required>
+                      <option></option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group mt-3">
+                    <label for="persons">Persons Nº</label>
+                    <select id="persons" name="persons" class="form-control select2" required>
+                      <option></option>
+                    </select>
+                  </div>
+                  <div class="form-group mt-3">
+                    <label for="date">Date</label>
+                    <input type="date" name="date" id="date" class="form-control" placeholder="Select a date" required>
+                  </div>
+                  <div class="form-group mt-3">
+                    <label for="time">Time</label>
+                    <select id="time" name="time" class="form-control select2" required>
+                      <option></option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center mt-3">
+                <button type="submit">Create</button>
+              </div>
+            </form>
           </div>
-          <div class="tabPane fade p-5" id="modifyTabPane" role="tabpanel" aria-labelledby="modifyTab" tabindex="0">
-            Holi 2
+
+          <!-- Modify -->
+          <div class="tab-pane fade p-5" id="modifyTabPane" role="tabpanel" aria-labelledby="modifyTab" tabindex="0">
+            <form action="" method="post" role="form">
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <label for="reservationModify">Reservation Code</label>
+                  <input type="text" name="reservationModify" class="form-control" id="reservationModify"
+                    placeholder="Your reservation code" required>
+                </div>
+              </div>
+              <div class="text-center mt-3">
+                <button type="submit">Search</button>
+              </div>
+            </form>
           </div>
-          <div class="tabPane fade p-5" id="cancelTabPane" role="tabpanel" aria-labelledby="cancelTab" tabindex="0">
-            Holi 3
+
+          <!-- Cancel -->
+          <div class="tab-pane fade p-5" id="cancelTabPane" role="tabpanel" aria-labelledby="cancelTab" tabindex="0">
+            <form action="" method="post" role="form">
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <label for="reservationCancel">Reservation Code</label>
+                  <input type="text" name="reservationCancel" class="form-control" id="reservationCancel"
+                    placeholder="Your reservation code" required>
+                </div>
+              </div>
+              <div class="text-center mt-3">
+                <button type="submit">Search</button>
+              </div>
+            </form>
           </div>
         </div>
+
 
       </div>
 
@@ -172,6 +241,7 @@
     integrity="sha512-S/H9RQ6govCzeA7F9D0m8NGfsGf0/HjJEiLEfWGaMCjFzavo+DkRbYtZLSO+X6cZsIKQ6JvV/7Y9YMaYnSGnAA=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
   <!-- Locale JS File -->
   <script src="../assets/js/main.js"></script>

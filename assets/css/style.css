@@ -26,28 +26,81 @@ h6 {
   font-family: "Playfair Display", serif !important;
 }
 
+input, select {
+  height: 44px !important;
+}
+
+input,
+select {
+  box-shadow: none !important;
+  font-size: 14px !important;
+  background: #0000 !important;
+  border-color: #c92626 !important;
+  color: #ffff !important;
+}
+
+input:focus,
+select:focus {
+  border-color: #c92626 !important;
+}
+
+input::placeholder,
+select::placeholder {
+  color: #cc4242 !important;
+}
+
+input::-moz-placeholder,
+select::-moz-placeholder {
+  color: #cc4242 !important;
+}
+
+button[type=submit] {
+  background: #c92626 !important;
+  border: 0 !important;
+  padding: 10px 35px !important;
+  color: #fff !important;
+  transition: 0.4s !important;
+  border-radius: 50px !important;
+}
+
+button[type=submit]:hover {
+  background: #cc4242 !important;
+}
+
 /*--------------------------------------------------------------
 # Select2
 --------------------------------------------------------------*/
 
-.select2-selection, .select2-results{
-    background-color: #000 !important; 
-    border: .5px solid #c92626 !important;
+.select2-selection{
+  min-height: 44px !important;
 }
 
-.select2-selection__choice{
+.select2-selection,
+.select2-results {
+  background-color: #000 !important;
+  border: .5px solid #c92626 !important;
+}
+
+.select2-selection__choice {
   background-color: #000 !important;
 }
 
-.select2-selection__choice__remove :hover, select2-selection__choice__remove :focus,
-.select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover, .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:focus{
-  color: #cc4242;
+.select2-selection__choice__remove :hover,
+.select2-selection__choice__remove :focus,
+.select2-selection__placeholder,
+.select2-search__field,
+.select2-search,
+.select2-results,
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover,
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove:focus {
+  color: #cc4242 !important;
   background-color: #000 !important;
 }
 
-.select2-container--default .select2-results__option--selected{
+.select2-container--default .select2-results__option--selected {
   background-color: #cc4242 !important;
 }
+
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
@@ -576,7 +629,7 @@ section {
     border-right: none;
     padding: 1px;
   }
-  
+
   .dashed-border-left {
     border-top: 1px dashed #ffff;
     border-left: none;
@@ -888,8 +941,8 @@ section {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.restaurants .box iframe{
-  border:0;
+.restaurants .box iframe {
+  border: 0;
   width: 100%;
   height: 350px;
 }
@@ -919,7 +972,7 @@ section {
   color: #fff;
 }
 
-.restaurant-img img{
+.restaurant-img img {
   height: 350px;
   width: 100%;
 }
@@ -943,8 +996,8 @@ section {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.menu .box iframe{
-  border:0;
+.menu .box iframe {
+  border: 0;
   width: 100%;
   height: 350px;
 }
@@ -967,7 +1020,7 @@ section {
   box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
 }
 
-.menu-img img{
+.menu-img img {
   width: 100%;
 }
 
@@ -975,11 +1028,13 @@ section {
 /*--------------------------------------------------------------
 # Menu
 --------------------------------------------------------------*/
-.reservation-btn , .reservation-btn .active{
+.reservation-btn,
+.reservation-btn .active {
   color: #c92626;
 }
 
-.reservation-btn:hover, .reservation-btn:focus {
+.reservation-btn:hover,
+.reservation-btn:focus {
   color: #c92626;
 }
 
@@ -1029,6 +1084,6 @@ section {
 # Bootstrap
 --------------------------------------------------------------*/
 
-.card-title{
+.card-title {
   color: #fff !important;
 }
