@@ -67,8 +67,7 @@ const rest_url = "../assets/img/gallery/";
           phone: "271-0580",
           image_url: `${rest_url}rest-10.jpg`,
           maps_location: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63048.936583397815!2d-79.54228071273795!3d9.012705208182185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fab55ec6df53ed1%3A0xdeedfb5daabbe844!2sMetromall%20Panam%C3%A1!5e0!3m2!1sen!2spa!4v1698028015129!5m2!1sen!2spa" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
-        },
-        // ... Más restaurantes
+        }
       ];
 
       var restaurantsHtml = "";
