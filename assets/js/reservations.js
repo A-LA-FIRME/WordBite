@@ -24,20 +24,53 @@ var Reservations = {};
         data: [
           {
             id: 0,
-            text: "Location 1",
-          },
-          {
+            text: "PH Las Mercedes, Edificio 23",
+            },
+            
+            {
             id: 1,
-            text: "Location 2",
-          },
-          {
+            text: "Av Condado del Rey 2, Panamá",
+            },
+            
+            {
             id: 2,
-            text: "Location 3",
-          },
-          {
+            text: "Vía Centenario, Panamá",      
+            },
+            
+            {
             id: 3,
-            text: "Location 4",
-          },
+            text: "Villa Lucre, San Miguelito",
+            },
+            
+            {
+            id: 4,
+            text: "Penonome",
+            },
+            
+            {
+            id: 5,
+            text: "3F8P+29R, Transístmica, Panamá",
+            },
+            
+            {
+            id: 6,
+            text: "Marginal, Avenida Roosevelt, Panamá",
+            },
+            
+            {
+            id: 7,
+            text: "Calle San Juan Bosco, Panamá",
+            },
+            
+            {
+            id: 8,
+            text: "Bella Vista, Panama City",
+            },
+            
+            {
+            id: 9,
+            text: "Av. Domingo Díaz, Panamá",
+            }
         ],
         placeholder: "Select a Restaurant"
       };
