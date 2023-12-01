@@ -80,7 +80,7 @@
       <div class="container" data-aos="fade-up">
         <div class="section-title">
           <h2>{{ trans('labels.general.gallery') }}</h2>
-          <p>{{ trans('labels.general.some_photos') }}</p>
+          <p>{{ trans('strings.gallery.some_photos') }}</p>
         </div>
       </div>
 
