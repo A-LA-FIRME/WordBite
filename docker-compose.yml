@@ -1,0 +1,17 @@
+
+version: '3.8'
+
+services:
+  app:
+    image: railway/laravel
+    on_deploy:
+      - exec:
+          command: composer install
+      - exec:
+          command: npm install
+      - exec:
+          command: npx mix
+      - exec:
+          command: composer dump-autoload
+      - exec:
+          command: php artisan serve
