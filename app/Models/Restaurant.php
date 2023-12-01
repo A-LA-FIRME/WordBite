@@ -4,12 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Restaurant extends Model
 {
     use HasFactory;
-    use SoftDeletes;
 
     protected $table = 'restaurant';
 
@@ -22,15 +20,12 @@ class Restaurant extends Model
     protected $fillable = [
         'id',
         'num',
-        'local_number',
-        'short_location',
-        'full_location',
+        'location',
         'maps_location',
-        'email',
+        'image_url',
         'phone',
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     public static function num()

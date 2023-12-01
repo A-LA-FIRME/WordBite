@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Repositories\FoodDishRepository;
+use App\Repositories\RestaurantRepository;
 use stdClass;
 
 class PageController extends Controller
@@ -12,16 +13,20 @@ class PageController extends Controller
 
     /**@var  FoodDishRepository*/
     protected $foodDishRepository;
+    protected $restaurantsRepository;
 
     /**
      * @param FoodDishRepository $foodDishRepository
+     * @param RestaurantRepository $restaurantRepository
      */
 
     public function __construct(
-        FoodDishRepository $foodDishRepository
+        FoodDishRepository $foodDishRepository,
+        RestaurantRepository $restaurantRepository
     )
     {
         $this->foodDishRepository = $foodDishRepository;
+        $this->restaurantRepository = $restaurantRepository;
     }
 
     public function index(Request $request){
@@ -41,6 +46,8 @@ class PageController extends Controller
     }
 
     public function restaurants(Request $request){
-        return view('restaurants');
+        $params = new stdClass();
+        $params->restaurants = $this->restaurantRepository->getRestaurants($request);
+        return view('restaurants', compact('params'));
     }
 }

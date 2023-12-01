@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateRestaurantTable extends Migration
 {
@@ -15,11 +16,9 @@ class CreateRestaurantTable extends Migration
         Schema::create('restaurant', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('num', 16)->index();
-            $table->integer('local_number');
-            $table->string('short_location');
-            $table->string('full_location');
-            $table->string('maps_location_url');
-            $table->string('email');
+            $table->string('location');
+            $table->text('maps_location');
+            $table->string('image_url');
             $table->string('phone');
             $table->timestamps();
         });
