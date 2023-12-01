@@ -13,13 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('food_dishes', function (Blueprint $table) {
+        Schema::create('food_dish', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('num', 16)->index();
-            $table->string('restaurant_num', 16)->index();
             $table->string('name');
             $table->text('description')->nullable();
             $table->float('price', 8, 2);
+            $table->string('image_url');
             $table->boolean('available')->default(true);
             $table->timestamps();
         });
@@ -32,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('food_dishes');
+        Schema::dropIfExists('food_dish');
     }
 };

@@ -46,22 +46,22 @@
   <header id="header" class="fixed-top d-flex align-items-cente">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
 
-      <h1 class="logo me-auto me-lg-0"><a href="index.html">{{ app_name() }}</a></h1>
+      <h1 class="logo me-auto me-lg-0"><a href="{{  route('page.home') }}">{{ app_name() }}</a></h1>
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link" href="./pages/restaurants.html">{{ trans('labels.general.restaurants') }}</a></li>
-          <li><a class="nav-link" href="./pages/menu.html">{{ trans('labels.general.menu') }}</a></li>
+          <li><a class="nav-link" href="{{  route('page.restaurants') }}">{{ trans('labels.general.restaurants') }}</a></li>
+          <li><a class="nav-link" href="{{  route('page.menu') }}">{{ trans('labels.general.menu') }}</a></li>
           <li class="dropdown"><a href="#"><span>{{ trans('labels.general.reservations') }}</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="./pages/reservations.html?tab=create">{{ trans('labels.general.create') }}</a></li>
-              <li><a href="./pages/reservations.html?tab=modify">{{ trans('labels.general.modify') }}</a></li>
-              <li><a href="./pages/reservations.html?tab=cancel">{{ trans('labels.general.cancel') }}</a></li>
+              <li><a href="{{  route('page.reservations', ['tab' => 'create']) }}">{{ trans('labels.general.create') }}</a></li>
+              <li><a href="{{  route('page.reservations', ['tab' => 'modify']) }}">{{ trans('labels.general.modify') }}</a></li>
+              <li><a href="{{  route('page.reservations', ['tab' => 'cancel']) }}">{{ trans('labels.general.cancel') }}</a></li>
             </ul>
           </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-      <a href="./pages/reservations.html?tab=create" class="book-a-table-btn d-none d-lg-flex">{{ trans('labels.general.create_reservation') }}</a>
+      <a href="{{  route('page.reservations', ['tab' => 'create']) }}" class="book-a-table-btn d-none d-lg-flex">{{ trans('labels.general.create_reservation') }}</a>
 
     </div>
   </header>
@@ -76,8 +76,8 @@
           <h2>"Flavor that finds its voice in every bite."</h2>
 
           <div class="btns">
-            <a href="./pages/menu.html" class="btn-menu animated fadeInUp">{{ trans('labels.general.menu') }}</a>
-            <a href="./pages/reservations.html?tab=create" class="btn-book animated fadeInUp">{{ trans('labels.general.create_reservation') }}</a>
+            <a href="{{  route('page.menu') }}" class="btn-menu animated fadeInUp">{{ trans('labels.general.menu') }}</a>
+            <a href="{{  route('page.reservations', ['tab' => 'create']) }}" class="btn-book animated fadeInUp">{{ trans('labels.general.create_reservation') }}</a>
           </div>
         </div>
       </div>

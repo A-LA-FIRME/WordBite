@@ -29,6 +29,23 @@
 
       <div class="row d-flex menu-items p-2">
 
+        @foreach ($params->fooddishes as $fd)
+            <div class="col-lg-3 p-1">
+                <div class="card box" data-aos="zoom-in">
+                    <div class="menu-img card-img-top">
+                        <img src="{{ $fd->image_url }}" alt="{{ $fd->name }}">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $fd->name }}</h5>
+                        <p class="card-text">{{ $fd->description }}</p>
+                    </div>
+                    <div class="card-body">
+                        <a href="#" class="card-link">$ {{ number_format($fd->price, 2) }}</a>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+
       </div>
     </div>
     </div>
