@@ -13,5 +13,3 @@ services:
           command: npx mix
       - exec:
           command: composer dump-autoload
-      - exec:
-          command: php artisan serve
