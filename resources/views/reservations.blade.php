@@ -11,8 +11,8 @@
     <div class="container" data-aos="fade-up">
 
       <div class="section-title">
-        <h2>Reservations</h2>
-        <p>Manage a Reservation</p>
+        <h2>{{ trans('labels.general.reservations') }}</h2>
+        <p> {{ trans('labels.general.manage_a_reservation') }} </p>
       </div>
 
       <ul class="nav nav-tabs nav-fill" id="tabs" role="tablist">
@@ -21,7 +21,7 @@
             data-bs-target="#createTabPane" type="button" role="tab" aria-controls="createTabPane"
             aria-selected="true">
             <div class="section-tab">
-              <p>Create</p>
+              <p>{{ trans('labels.general.create') }}</p>
             </div>
           </button>
         </li>
@@ -30,7 +30,7 @@
             data-bs-target="#modifyTabPane" type="button" role="tab" aria-controls="modifyTabPane"
             aria-selected="false">
             <div class="section-tab">
-              <p>Modify</p>
+              <p>{{ trans('labels.general.modify') }}</p>
             </div>
           </button>
         </li>
@@ -39,7 +39,7 @@
             data-bs-target="#cancelTabPane" type="button" role="tab" aria-controls="cancelTabPane"
             aria-selected="false">
             <div class="section-tab">
-              <p>Cancel</p>
+              <p>{{ trans('labels.general.cancel') }}</p>
             </div>
           </button>
         </li>
@@ -53,15 +53,15 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group mt-3">
-                  <label for="name">Name</label>
+                  <label for="name">{{ trans('labels.general.name') }}</label>
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
                 </div>
                 <div class="form-group mt-3">
-                  <label for="email">Email</label>
+                  <label for="email">{{ trans('labels.general.email') }}</label>
                   <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
                 </div>
                 <div class="form-group mt-3">
-                  <label for="location">Restaurant</label>
+                  <label for="location">{{ trans('labels.general.restaurant') }}</label>
                   <select id="location" name="location" class="form-control select2" required>
                     <option></option>
                   </select>
@@ -69,17 +69,17 @@
               </div>
               <div class="col-md-6">
                 <div class="form-group mt-3">
-                  <label for="persons">Persons Nº</label>
+                  <label for="persons">{{ trans('labels.general.persons_n') }}</label>
                   <select id="persons" name="persons" class="form-control select2" required>
                     <option></option>
                   </select>
                 </div>
                 <div class="form-group mt-3">
-                  <label for="date">Date</label>
+                  <label for="date">{{ trans('labels.general.date') }}</label>
                   <input type="date" name="date" id="date" class="form-control" placeholder="Select a date" required>
                 </div>
                 <div class="form-group mt-3">
-                  <label for="time">Time</label>
+                  <label for="time">{{ trans('labels.general.time') }}</label>
                   <select id="time" name="time" class="form-control select2" required>
                     <option></option>
                   </select>
@@ -87,7 +87,7 @@
               </div>
             </div>
             <div class="text-center mt-3">
-              <button type="submit">Create</button>
+              <button type="submit">{{ trans('labels.general.create') }}</button>
             </div>
           </form>
         </div>
@@ -97,13 +97,13 @@
           <form action="" method="post" role="form">
             <div class="row">
               <div class="col-md-12 form-group">
-                <label for="reservationModify">Reservation Code</label>
+                <label for="reservationModify">{{ trans('labels.general.reservation_code') }}</label>
                 <input type="text" name="reservationModify" class="form-control" id="reservationModify"
                   placeholder="Your reservation code" required>
               </div>
             </div>
             <div class="text-center mt-3">
-              <button type="submit">Search</button>
+              <button type="submit">{{ trans('labels.general.search') }}</button>
             </div>
           </form>
         </div>
@@ -113,13 +113,13 @@
           <form action="" method="post" role="form">
             <div class="row">
               <div class="col-md-12 form-group">
-                <label for="reservationCancel">Reservation Code</label>
+                <label for="reservationCancel">{{ trans('labels.general.reservation_code') }}</label>
                 <input type="text" name="reservationCancel" class="form-control" id="reservationCancel"
                   placeholder="Your reservation code" required>
               </div>
             </div>
             <div class="text-center mt-3">
-              <button type="submit">Search</button>
+              <button type="submit">{{ trans('labels.general.search') }}</button>
             </div>
           </form>
         </div>

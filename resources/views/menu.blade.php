@@ -14,8 +14,8 @@
         <div class="p-2">
           <div class="col-lg-4 p-0">
             <div class="section-title">
-              <h2>Menu</h2>
-              <p>See our dishes</p>
+              <h2>{{ trans('labels.general.menu') }}</h2>
+              <p> {{ trans('labels.menu.see_our_dishes') }}</p>
             </div>
           </div>
           <div class="col-lg-4 p-0">

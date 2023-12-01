@@ -14,19 +14,19 @@
             </div>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-            <h3>Taste without borders</h3>
+            <h3>{{ trans('strings.about.taste_without_borders') }}</h3>
             <p class="fst-italic">
-              WordBite is a unique place in Panama's culinary scene, with multiple locations throughout the country. This restaurant prides itself on offering a diverse dining experience that attracts food lovers from all corners of the world. WordBite has managed to combine international flavors with modern presentation and a welcoming ambiance.
-              <br><br>Monday to Saturday Hours: 8:00 AM to 11:00 PM
-              <br>Sunday Hours: 9:00 AM to 10:00 PM 
+                {{ trans('strings.about.wordbite_about') }}
+              <br><br>{{ trans('strings.about.wordbite_about_hour') }}
+              <br>{{ trans('strings.about.wordbite_about_hour_2') }}
             </p>
             <ul>
-              <li><i class="bi bi-check-circle"></i> International Variety</li>
-              <li><i class="bi bi-check-circle"></i> Relaxed and Cozy Atmosphere</li>
-              <li><i class="bi bi-check-circle"></i> Innovation in Presentation</li>
+              <li><i class="bi bi-check-circle"></i> {{ trans('labels.general.international_variety') }}</li>
+              <li><i class="bi bi-check-circle"></i> {{ trans('labels.general.relaxed_atmosphere') }}</li>
+              <li><i class="bi bi-check-circle"></i> {{ trans('labels.general.innovation_presentation') }}</li>
             </ul>
             <p>
-              "We invite you to WordBite, where every meal is a culinary journey. Discover flavors of the world in every dish - come and enjoy the experience!"
+                {{ trans('strings.about.wordbite_about_hour_cite') }}
             </p>
           </div>
         </div>
@@ -39,33 +39,33 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Why Us</h2>
-          <p>Why Choose Our Restaurant</p>
+          <h2>{{ trans('labels.why_us.why_us') }}</h2>
+          <p>{{ trans('labels.why_us.why_us_2') }}</p>
         </div>
 
         <div class="row">
 
           <div class="col-lg-4">
             <div class="box" data-aos="zoom-in" data-aos-delay="100">
-              <span>01</span>
-              <h4>Unique Gastronomic Experience</h4>
-              <p>Every meal is an adventure for your senses.</p>
+              <span>{{ trans('labels.general.01') }}</span>
+              <h4> {{ trans('labels.why_us.unique_gastronomic') }} </h4>
+              <p> {{ trans('strings.why_us.every_meal') }} </p>
             </div>
           </div>
 
           <div class="col-lg-4 mt-4 mt-lg-0">
             <div class="box" data-aos="zoom-in" data-aos-delay="100">
-              <span>02</span>
-              <h4>Commitment to Quality</h4>
-              <p>You can trust that every dish will be full of flavor and freshness.</p>
+              <span>{{ trans('labels.general.02') }}</span>
+              <h4>{{ trans('labels.why_us.commitment_quality') }}</h4>
+              <p>{{ trans('strings.why_us.you_can_trust') }}</p>
             </div>
           </div>
 
           <div class="col-lg-4 mt-4 mt-lg-0">
             <div class="box" data-aos="zoom-in" data-aos-delay="100">
-              <span>03</span>
-              <h4>Cozy Environment</h4>
-              <p>Whether it's a romantic dinner, a family meal or a gathering of friends, you'll feel comfortable and welcome.</p>
+              <span>{{ trans('labels.general.03') }}</span>
+              <h4>{{ trans('labels.why_us.cozy_Environment') }}</h4>
+              <p>{{ trans('strings.why_us.whether_it') }}</p>
             </div>
           </div>
 
@@ -79,8 +79,8 @@
 
       <div class="container" data-aos="fade-up">
         <div class="section-title">
-          <h2>Gallery</h2>
-          <p>Some photos from Our Restaurant</p>
+          <h2>{{ trans('labels.general.gallery') }}</h2>
+          <p>{{ trans('labels.general.some_photos') }}</p>
         </div>
       </div>
 
@@ -110,8 +110,8 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Chefs</h2>
-          <p>Our Proffesional Chefs</p>
+          <h2>{{ trans('labels.general.chefs') }}</h2>
+          <p>{{ trans('labels.chefs.our_proffesional_chefs') }}</p>
         </div>
 
         <div class="row">

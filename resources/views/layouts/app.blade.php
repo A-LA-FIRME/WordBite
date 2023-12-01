@@ -72,8 +72,8 @@
     <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
       <div class="row">
         <div class="col-lg-8">
-          <h1>Welcome to <span>{{ app_name() }}</span></h1>
-          <h2>"Flavor that finds its voice in every bite."</h2>
+          <h1>{{ trans('strings.presentation.welcome_to') }} <span>{{ app_name() }}</span></h1>
+          <h2>{{ trans('strings.presentation.presentation_text') }}</h2>
 
           <div class="btns">
             <a href="{{  route('page.menu') }}" class="btn-menu animated fadeInUp">{{ trans('labels.general.menu') }}</a>
@@ -97,7 +97,7 @@
         </div>
       </div>
       <div class="copyright pt-1">
-        &copy; {{ now()->year }} Copyright <strong><span>{{ app_name() }}</span></strong>. All Rights Reserved
+        &copy; {{ now()->year }} {{ trans('labels.general.copyright') }} <strong><span>{{ app_name() }}</span></strong>. {{ trans('labels.general.rights_reserved') }}
       </div>
       <div class="credits pt-1">
         Designed by <a href="#">Jhonathan Vargas</a> - <a href="#">Jose Martinez</a> - <a href="#">Diego Chan</a>

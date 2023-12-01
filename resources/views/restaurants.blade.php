@@ -11,8 +11,8 @@
     <div class="container" data-aos="fade-up">
 
       <div class="section-title">
-        <h2>Locations</h2>
-        <p>Visit a Restaurant</p>
+        <h2>{{ trans('labels.general.locations') }}</h2>
+        <p>{{ trans('labels.general.visit_a_restaurant') }}</p>
       </div>
 
     </div>
