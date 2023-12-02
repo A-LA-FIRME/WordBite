@@ -21,24 +21,34 @@ class ReservationRepository extends BaseRepository
     public function create($request)
     {
         $except = ["_token", "_method"];
+        $maxAttempts = 20;
 
-        $existingReservation = Reservation::where([
-            'restaurant_num' => $request->restaurant_num,
-            'date' => $request->date,
-            'time' => $request->time,
-            'number_persons' => $request->number_persons,
-            'status' => ReservationStatus::CREATED,
-        ])->first();
+        for ($attempt = 1; $attempt <= $maxAttempts; $attempt++) {
+            $randomTable = mt_rand(1, 20);
 
-        if ($existingReservation) {
-            return trans('errors.reservation.reservation');
+            $existingReservation = Reservation::where([
+                'restaurant_num' => $request->restaurant_num,
+                'date' => $request->date,
+                'time' => $request->time,
+                'number_persons' => $request->number_persons,
+                'status' => ReservationStatus::CREATED,
+                'table' => $randomTable,
+            ])->first();
+
+            if (!$existingReservation) {
+                break;
+            }
+        }
+
+        if ($attempt > $maxAttempts) {
+            return trans('errors.reservation.no_available_table');
         }
 
         $requestData = $request->except($except);
         $requestData["num"] = Reservation::num();
         $requestData["code"] = Reservation::code();
         $requestData["status"] = ReservationStatus::CREATED;
-        $requestData["table"] = "4";
+        $requestData["table"] = (string) $randomTable;
         $requestData["created_at"] = new DateTime();
 
         $reservation = Reservation::create($requestData);
