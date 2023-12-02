@@ -1,3 +1,5 @@
+const CSRF = $('meta[name="csrf-token"]').attr('content');
+
 var Home = {};
 
 (function () {

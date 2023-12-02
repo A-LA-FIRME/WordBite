@@ -56,4 +56,38 @@ class ReservationRepository extends BaseRepository
         return $reservation;
     }
 
+    public function modify($request, $reservation)
+    {
+        $except = ["_token", "_method"];
+        $maxAttempts = 20;
+
+        for ($attempt = 1; $attempt <= $maxAttempts; $attempt++) {
+            $randomTable = mt_rand(1, 20);
+
+            $existingReservation = Reservation::where([
+                'restaurant_num' => $request->restaurant_num,
+                'date' => $request->date,
+                'time' => $request->time,
+                'number_persons' => $request->number_persons,
+                'status' => ReservationStatus::CREATED,
+                'table' => $randomTable,
+            ])->first();
+
+            if (!$existingReservation) {
+                break;
+            }
+        }
+
+        if ($attempt > $maxAttempts) {
+            return trans('errors.reservation.no_available_table');
+        }
+
+        $requestData = $request->except($except);
+        $requestData["table"] = (string) $randomTable;
+        $requestData["updated_at"] = new DateTime();
+
+        $reservation->update($requestData);
+
+        return trans('messages.reservation.modify_success');
+    }
 }

@@ -34,15 +34,6 @@
             </div>
           </button>
         </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link w-100 reservation-btn" id="cancelTab" data-bs-toggle="tab"
-            data-bs-target="#cancelTabPane" type="button" role="tab" aria-controls="cancelTabPane"
-            aria-selected="false">
-            <div class="section-tab">
-              <p>{{ trans('labels.general.cancel') }}</p>
-            </div>
-          </button>
-        </li>
       </ul>
 
       <div class="tab-content" id="tabsContent">
@@ -94,7 +85,7 @@
                   <select id="time" name="time" placeholder="{{ trans('labels.general.time') }}" class="form-control select2" required>
                     <option selected=""></option>
                     @for ($i = 0; $i < 6; $i++)
-                        <option value="{{ $i }}">
+                        <option value="{{ ($i == 0) ? '12AM' : ($i * 2) . 'PM' }}">
                             {{ ($i == 0) ? '12AM' : ($i * 2) . 'PM' }}
                         </option>
                     @endfor
@@ -110,27 +101,12 @@
 
         <!-- Modify -->
         <div class="tab-pane fade p-5" id="modifyTabPane" role="tabpanel" aria-labelledby="modifyTab" tabindex="0">
-          <form action="" method="post" role="form">
+          <form action="{{ route('reservations.get') }}" id="modifyForm" method="post" role="form">
+            {!! csrf_field() !!}
             <div class="row">
               <div class="col-md-12 form-group">
                 <label for="reservationModify">{{ trans('labels.general.reservation_code') }}</label>
                 <input type="text" name="reservationModify" class="form-control" id="reservationModify"
-                  placeholder="Your reservation code" required>
-              </div>
-            </div>
-            <div class="text-center mt-3">
-              <button type="submit">{{ trans('labels.general.search') }}</button>
-            </div>
-          </form>
-        </div>
-
-        <!-- Cancel -->
-        <div class="tab-pane fade p-5" id="cancelTabPane" role="tabpanel" aria-labelledby="cancelTab" tabindex="0">
-          <form action="" method="post" role="form">
-            <div class="row">
-              <div class="col-md-12 form-group">
-                <label for="reservationCancel">{{ trans('labels.general.reservation_code') }}</label>
-                <input type="text" name="reservationCancel" class="form-control" id="reservationCancel"
                   placeholder="Your reservation code" required>
               </div>
             </div>
@@ -150,6 +126,11 @@
 
 @endsection
 
+@section('page-modal')
+    @include('modal.reservations_modify')
+@endsection
+
 @section('page-scripts')
   <script src="{{ mix('js/reservations.min.js') }}"></script>
+  <script src="{{ mix('js/reservation.modify.modal.min.js') }}"></script>
 @endsection

@@ -42,6 +42,7 @@
 </head>
 
 <body>
+
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-cente">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
@@ -55,7 +56,6 @@
             <ul>
               <li><a href="{{  route('page.reservations', ['tab' => 'create']) }}">{{ trans('labels.general.create') }}</a></li>
               <li><a href="{{  route('page.reservations', ['tab' => 'modify']) }}">{{ trans('labels.general.modify') }}</a></li>
-              <li><a href="{{  route('page.reservations', ['tab' => 'cancel']) }}">{{ trans('labels.general.cancel') }}</a></li>
             </ul>
           </li>
         </ul>
@@ -112,6 +112,7 @@
   <script src="{{ mix('js/app.min.js') }}"></script>
 
   @yield('page-scripts')
+  @yield('page-modal')
   @yield('after-scripts')
 </body>
 

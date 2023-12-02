@@ -2,6 +2,7 @@
 
 return [
     "reservation"=>[
-        "reservation"=> "No es posible reservar con los datos proporcionados",
+        "no_available_table"=> "No es posible reservar con los datos proporcionados",
+        "reservation_not_found" => "Reservacion no encontrada",
     ],
 ];

@@ -22,3 +22,6 @@ Route::get('/restaurants', [PageController::class, 'restaurants'])->name('page.r
 
 
 Route::post('/reservations/create', [ReservationController::class, 'create'])->name('reservations.create');
+Route::post('/reservations/get', [ReservationController::class, 'get'])->name('reservations.get');
+Route::post('/reservations/modify/{reservation}', [ReservationController::class, 'modify'])->name('reservations.modify');
+Route::post('/reservations/cancel/{reservation}', [ReservationController::class, 'cancel'])->name('reservations.cancel');

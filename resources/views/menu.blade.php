@@ -21,8 +21,6 @@
           <div class="col-lg-4 p-0">
           </div>
           <div class="col-lg-4 p-0">
-            <select id="menuCategories" class="form-control select2" multiple="multiple">
-            </select>
           </div>
         </div>
       </div>

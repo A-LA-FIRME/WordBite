@@ -53,10 +53,11 @@
     "/img/menu/media-tofu.jpg": "/img/menu/media-tofu.jpg?id=078694a16191bb5a3712bb20676c7c1e",
     "/img/menu/media-wings.jpg": "/img/menu/media-wings.jpg?id=fdbf3d1a65abdbd9e036420bff46da0d",
     "/css/app.min.css": "/css/app.min.css?id=d9a9fcf987715bab6b0c2f8e41fba2ad",
-    "/js/app.min.js": "/js/app.min.js?id=cc783890ec1a5e9d7a7e43d030e2a917",
-    "/js/main.min.js": "/js/main.min.js?id=91eef22a5670e4d69dcb1e1768dad668",
-    "/js/menu.min.js": "/js/menu.min.js?id=0ce3d4b86dd2767062fa2c2d78d83582",
-    "/js/reservations.min.js": "/js/reservations.min.js?id=481aecc7e3cb91fdca066b3d1704db8d",
+    "/js/app.min.js": "/js/app.min.js?id=e0a88d09a53950220aba0b72e2bdccab",
+    "/js/main.min.js": "/js/main.min.js?id=f5a51ca4ba9c0fd5d093f599f334d9d0",
+    "/js/menu.min.js": "/js/menu.min.js?id=e35d478e6627ff7a8fe73397f2607755",
+    "/js/reservation.modify.modal.min.js": "/js/reservation.modify.modal.min.js?id=8d116e709c611cfc25ab22a7b17c1f05",
+    "/js/reservations.min.js": "/js/reservations.min.js?id=6da4123dc87526e0bc72d9f0f3517983",
     "/js/restaurants.min.js": "/js/restaurants.min.js?id=b9192f670c6099f7347b15e10f64d2e8",
     "/css/style.min.css": "/css/style.min.css?id=ffb2543292eb96b7ac2abd395bfb8937"
 }
