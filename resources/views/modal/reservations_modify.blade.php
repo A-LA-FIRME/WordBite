@@ -1,5 +1,5 @@
 <!-- .modal -->
-<div class="modal fade" tabindex="99" id="reservationModifyModal" data-bs-backdrop="static" data-bs-keyboard="false"
+<div class="modal fade" tabindex="-1" id="reservationModifyModal" data-bs-backdrop="static" data-bs-keyboard="false"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <form id="reservationModifyForm" name="reservationModifyForm" method="post" role="form"
         action="{!! route('reservations.modify', ['reservation' => 'item_num']) !!}"

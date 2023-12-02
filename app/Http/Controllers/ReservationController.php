@@ -81,6 +81,14 @@ class ReservationController extends Controller
                 'status' => ReservationStatus::CREATED,
             ])->first();
 
+            if(!isset($reservation)){
+                $params->type = 'danger';
+                $params->body = new stdClass();
+                $params->body->message = trans('errors.reservation.reservation_not_found');
+                $response = app_response($params);
+                return response()->json($response);
+            }
+
             $params->type = 'success';
             $params->body = new stdClass();
             $params->body->reservation = $reservation;

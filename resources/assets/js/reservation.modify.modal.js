@@ -142,7 +142,7 @@ $(document).ready(function () {
         ModifyReservationModal.resetForm();
     });
 
-    ModifyReservationModal.modal.on("shown.bs.modal", function (e) {
+    ModifyReservationModal.modal.on("show.bs.modal", function (e) {
         ModifyReservationModal.initSelect2();
         ModifyReservationModal.initDatePicker();
     });
