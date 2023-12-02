@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Repositories\FoodDishRepository;
 use App\Repositories\RestaurantRepository;
+use App\Models\Restaurant;
 use stdClass;
 
 class PageController extends Controller
@@ -13,7 +14,9 @@ class PageController extends Controller
 
     /**@var  FoodDishRepository*/
     protected $foodDishRepository;
-    protected $restaurantsRepository;
+
+    /**@var  RestaurantRepository*/
+    protected $restaurantRepository;
 
     /**
      * @param FoodDishRepository $foodDishRepository
@@ -42,7 +45,11 @@ class PageController extends Controller
     }
 
     public function reservations(Request $request){
-        return view('reservations');
+
+        $params = new stdClass();
+        $params->restaurants = Restaurant::orderBy('location','asc')->get();
+
+        return view('reservations', compact('params'));
     }
 
     public function restaurants(Request $request){

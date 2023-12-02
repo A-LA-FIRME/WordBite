@@ -6,6 +6,7 @@ use App\Repositories\BaseRepository;
 use App\Models\Restaurant;
 use Illuminate\Support\Facades\Log;
 use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Support\Facades\DB;
 
 class RestaurantRepository extends BaseRepository
 {

@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Reservation extends Model
 {
     use HasFactory;
-    use SoftDeletes;
 
     protected $table = 'reservation';
 
@@ -23,15 +22,16 @@ class Reservation extends Model
         'id',
         'num',
         'restaurant_num',
-        'table_num',
+        'table',
         'code',
         'customer_full_name',
         'customer_email',
         'number_persons',
         'date',
+        'time',
+        'status',
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     public static function num()

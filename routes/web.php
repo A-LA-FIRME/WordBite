@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ReservationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,6 @@ Route::get('/', [PageController::class, 'index'])->name('page.home');
 Route::get('/menu', [PageController::class, 'menu'])->name('page.menu');
 Route::get('/reservations', [PageController::class, 'reservations'])->name('page.reservations');
 Route::get('/restaurants', [PageController::class, 'restaurants'])->name('page.restaurants');
+
+
+Route::post('/reservations/create', [ReservationController::class, 'create'])->name('reservations.create');

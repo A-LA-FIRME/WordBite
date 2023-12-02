@@ -43,6 +43,39 @@ if (!function_exists('app_authors')) {
     }
 }
 
+if (! function_exists('csrf_token')) {
+    /**
+     * Get the CSRF token value.
+     *
+     * @return string
+     *
+     * @throws \RuntimeException
+     */
+    function csrf_token()
+    {
+        $session = app('session');
+
+        if (isset($session)) {
+            return $session->token();
+        }
+
+        throw new RuntimeException('Application session store not set.');
+    }
+}
+
+
+if (! function_exists('csrf_field')) {
+    /**
+     * Generate a CSRF token form field.
+     *
+     * @return \Illuminate\Support\HtmlString
+     */
+    function csrf_field()
+    {
+        return new HtmlString('<input type="hidden" id="_token" name="_token" value="'.csrf_token().'">');
+    }
+}
+
 if (!function_exists('app_rand')) {
     function app_rand($length = 8, $opt = 'LN')
     {
@@ -117,5 +150,21 @@ if (!function_exists('app_num')) {
         while(!$unique);
 
         return $random;
+    }
+}
+
+if (!function_exists('app_response')) {
+    /**
+     * @return stdClass
+     */
+    function app_response($params)
+    {
+        $response = new stdClass();
+        $response->type = 'danger';
+        if (isset($params->type)) $response->type = $params->type;
+        if (isset($params->message)) $response->message = $params->message;
+        if (isset($params->field_name)) $response->field_name = $params->field_name;
+        if (isset($params->body)) $response->body = $params->body;
+        return $response;
     }
 }

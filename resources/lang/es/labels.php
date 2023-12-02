@@ -19,7 +19,7 @@ return [
         "chefs"=> "Chefs",
         "name"=> "Nombre",
         "email"=> "Correo electrónico",
-        "Restaurant"=> "Restaurante",
+        "restaurant"=> "Restaurante",
         "persons_n"=> "Número de Personas",
         "date"=> "Fecha",
         "time"=> "Hora",

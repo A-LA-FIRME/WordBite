@@ -21,9 +21,9 @@
               <br>{{ trans('strings.about.wordbite_about_hour_2') }}
             </p>
             <ul>
-              <li><i class="bi bi-check-circle"></i> {{ trans('labels.general.international_variety') }}</li>
-              <li><i class="bi bi-check-circle"></i> {{ trans('labels.general.relaxed_atmosphere') }}</li>
-              <li><i class="bi bi-check-circle"></i> {{ trans('labels.general.innovation_presentation') }}</li>
+              <li><i class="bi bi-check-circle"></i> {{ trans('labels.presentation.international_variety') }}</li>
+              <li><i class="bi bi-check-circle"></i> {{ trans('labels.presentation.relaxed_atmosphere') }}</li>
+              <li><i class="bi bi-check-circle"></i> {{ trans('labels.presentation.innovation_presentation') }}</li>
             </ul>
             <p>
                 {{ trans('strings.about.wordbite_about_hour_cite') }}

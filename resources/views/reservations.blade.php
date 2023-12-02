@@ -49,7 +49,8 @@
         <!-- Create -->
         <div class="tab-pane fade show active p-5" id="createTabPane" role="tabpanel" aria-labelledby="createTab"
           tabindex="0">
-          <form action="" method="post" role="form">
+          <form id="createForm" action="{{route('reservations.create')}}" data-code-text="{{ trans('labels.general.reservation_code') }}" method="post" role="form">
+            {!! csrf_field() !!}
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group mt-3">
@@ -62,16 +63,26 @@
                 </div>
                 <div class="form-group mt-3">
                   <label for="location">{{ trans('labels.general.restaurant') }}</label>
-                  <select id="location" name="location" class="form-control select2" required>
-                    <option></option>
+                  <select id="location" name="location" placeholder="{{ trans('labels.general.restaurant') }}" class="form-control select2" required>
+                    <option selected=""></option>
+                    @foreach ($params->restaurants as $restaurant)
+                        <option value="{{ $restaurant->num }}">
+                            {{ $restaurant->location }}
+                        </option>
+                    @endforeach
                   </select>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group mt-3">
                   <label for="persons">{{ trans('labels.general.persons_n') }}</label>
-                  <select id="persons" name="persons" class="form-control select2" required>
-                    <option></option>
+                  <select id="persons" name="persons" placeholder="{{ trans('labels.general.persons_n') }}" class="form-control select2" required>
+                    <option selected=""></option>
+                    @for ($i = 0; $i < 4; $i++)
+                        <option value="{{ $i }}">
+                            {{ $i + 1 }}
+                        </option>
+                    @endfor
                   </select>
                 </div>
                 <div class="form-group mt-3">
@@ -80,8 +91,13 @@
                 </div>
                 <div class="form-group mt-3">
                   <label for="time">{{ trans('labels.general.time') }}</label>
-                  <select id="time" name="time" class="form-control select2" required>
-                    <option></option>
+                  <select id="time" name="time" placeholder="{{ trans('labels.general.time') }}" class="form-control select2" required>
+                    <option selected=""></option>
+                    @for ($i = 0; $i < 6; $i++)
+                        <option value="{{ $i }}">
+                            {{ ($i == 0) ? '12AM' : ($i * 2) . 'PM' }}
+                        </option>
+                    @endfor
                   </select>
                 </div>
               </div>
