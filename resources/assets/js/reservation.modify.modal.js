@@ -17,13 +17,13 @@ var ModifyReservationModal = {};
         cancelReservationTitle: null,
 
         init: function () {
-            ModifyReservationModal.cancelReservationRoute = ModifyReservationModal.form.data("delete-route");
-            ModifyReservationModal.confirm = ModifyReservationModal.form.data("confirm");
-            ModifyReservationModal.cancelReservationTitle = ModifyReservationModal.form.data("cancel-reservation-title");
+            ModifyReservationModal.cancelReservationRoute = $("#reservationModifyForm").data("delete-route");
+            ModifyReservationModal.confirm = $("#reservationModifyForm").data("confirm");
+            ModifyReservationModal.cancelReservationTitle = $("#reservationModifyForm").data("cancel-reservation-title");
             ModifyReservationModal.bmodal = new bootstrap.Modal("#reservationModifyModal");
 
-            ModifyReservationModal.initSelect2();
             ModifyReservationModal.initDatePicker();
+            ModifyReservationModal.initSelect2();
             ModifyReservationModal.initForm();
         },
 
@@ -70,7 +70,7 @@ var ModifyReservationModal = {};
                 messages: {},
                 submitHandler: function (form) {
                     var params = { form: form };
-                    ModifyReservationModal.modify(params);
+                    ModifyReservationModal.modify();
                 },
             });
         },
@@ -91,16 +91,17 @@ var ModifyReservationModal = {};
                 allowClear: false,
             });
 
-            $("select2-container").css("width", "100%");
+            $(".select2-container").css("width", "100%");
         },
 
         initDatePicker: function () {
             flatpickr("#modifyDate");
         },
 
-        modify: async function (params) {
-            var url = params.form.getAttribute("action");
-            url = url.replace("item_num", ModifyReservationModal.num);
+        modify: async function () {
+            var url = $("#reservationModifyForm").attr("action");
+            var num = $("#modifyNum").val();
+            url = url.replace("item_num", num);
 
             var requestData = {
                 num: $("#modifyNum").val(),
@@ -121,11 +122,13 @@ var ModifyReservationModal = {};
                 data: requestData,
             });
 
-            if (response.type === "success") {
+            if (response.type == "success") {
                 Swal.fire(response.body.message,"","success");
             } else {
                 Swal.fire(response.body.message, "", "error");
             }
+
+            ModifyReservationModal.bmodal.hide();
             return;
         },
 
@@ -142,17 +145,13 @@ $(document).ready(function () {
         ModifyReservationModal.resetForm();
     });
 
-    ModifyReservationModal.modal.on("show.bs.modal", function (e) {
-        ModifyReservationModal.initSelect2();
-        ModifyReservationModal.initDatePicker();
-    });
-
-    ModifyReservationModal.modal.on("click","#cancelReservationBtn", function(e){
+    $("#cancelReservationBtn").on("click", function(e){
         e.preventDefault();
 
-        var url = ModifyReservationModal.cancelReservationRoute;
+        var num = $("#modifyNum").val();
+        var url = ModifyReservationModal.cancelReservationRoute.replace("item_num", num);
         var params = {};
-        params.url = url.replace("item_num", ModifyReservationModal.num);
+        params.url = url;
 
         Swal.fire({
             title: ModifyReservationModal.cancelReservationTitle,
@@ -160,15 +159,28 @@ $(document).ready(function () {
             confirmButtonText: ModifyReservationModal.confirm,
             }).then(async (result) => {
                 if (result.isConfirmed) {
-                    var response = await fetch(url);
+                    var response = await $.ajax({
+                        url: url,
+                        type: "POST",
+                        headers: {
+                            "X-CSRF-TOKEN": CSRF,
+                        },
+                    });
 
-                    if (response.type === "success") {
+                    if (response.type == "success") {
                         Swal.fire(response.body.message,"","success");
                     } else {
                         Swal.fire(response.body.message, "", "error");
                     }
                 }
+
+                ModifyReservationModal.bmodal.hide();
                 return;
         });
+    });
+
+    $("#saveBtn").on("click", function(e){
+        e.preventDefault();
+        ModifyReservationModal.modify();
     });
 });

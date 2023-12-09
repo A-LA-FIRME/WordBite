@@ -10,6 +10,7 @@ use Illuminate\Http\JsonResponse;
 use App\Models\Reservation;
 use Illuminate\Support\Facades\Log;
 use App\Enums\ReservationStatus;
+use DateTime;
 
 class ReservationController extends Controller
 {
@@ -54,7 +55,7 @@ class ReservationController extends Controller
         $params->type = 'danger';
         if($reservation && isset($reservation->code)) $params->type =  'success';
         $params->body = new stdClass();
-        $params->body->text = $reservation->code ?? $reservation;
+        $params->body->message = $reservation->code ?? $reservation;
         $response = app_response($params);
         return response()->json($response);
     }
@@ -99,7 +100,7 @@ class ReservationController extends Controller
 
             $params->type = 'danger';
             $params->body = new stdClass();
-            $params->body->message = trans('errors.reservation.reservation_not_found');
+            $params->body->message = trans('errors.reservation.error_ocurred');
             $response = app_response($params);
             return response()->json($response);
         }
@@ -131,7 +132,7 @@ class ReservationController extends Controller
 
         $params->type =  'success';
         $params->body = new stdClass();
-        $params->body->text = $res;
+        $params->body->message = $res;
         $response = app_response($params);
         return response()->json($response);
     }
@@ -149,7 +150,7 @@ class ReservationController extends Controller
 
             $params->type =  'success';
             $params->body = new stdClass();
-            $params->body->message = trans('messages.reservation.reservation_not_found');
+            $params->body->message = trans('errors.reservation.reservation_cancelled');
             $response = app_response($params);
             return response()->json($response);
 
@@ -158,7 +159,7 @@ class ReservationController extends Controller
 
             $params->type = 'danger';
             $params->body = new stdClass();
-            $params->body->message = trans('errors.reservation.reservation_not_found');
+            $params->body->message = trans('errors.reservation.error_ocurred');
             $response = app_response($params);
             return response()->json($response);
         }

@@ -10,6 +10,7 @@ return [
         "cancel"=> "Cancelar",
         "manage_a_reservation"=> "Gestionar una Reserva",
         "create_reservation"=> "Crear reserva",
+        "modify_reservation"=> "Modificar reserva",
         "copyright"=> "Derechos de autor",
         "rights_reserved"=> "Todos los derechos reservados",
         "01"=> "01",
@@ -27,6 +28,8 @@ return [
         "reservation_code"=> "Código de Reserva",
         "locations"=> "Ubicaciones",
         "visit_a_restaurant"=> "Visita uno de nuestros restaurantes",
+        "save"=> "Guardar",
+        "confirm"=> "Confirmar"
     ],
 
     "presentation"=> [

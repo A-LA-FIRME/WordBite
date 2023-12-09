@@ -30,7 +30,6 @@ class ReservationRepository extends BaseRepository
                 'restaurant_num' => $request->restaurant_num,
                 'date' => $request->date,
                 'time' => $request->time,
-                'number_persons' => $request->number_persons,
                 'status' => ReservationStatus::CREATED,
                 'table' => $randomTable,
             ])->first();
@@ -68,7 +67,6 @@ class ReservationRepository extends BaseRepository
                 'restaurant_num' => $request->restaurant_num,
                 'date' => $request->date,
                 'time' => $request->time,
-                'number_persons' => $request->number_persons,
                 'status' => ReservationStatus::CREATED,
                 'table' => $randomTable,
             ])->first();
@@ -88,6 +86,6 @@ class ReservationRepository extends BaseRepository
 
         $reservation->update($requestData);
 
-        return trans('messages.reservation.modify_success');
+        return trans('errors.reservation.modify_success');
     }
 }

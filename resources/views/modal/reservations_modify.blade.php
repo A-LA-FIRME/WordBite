@@ -14,8 +14,8 @@
                         {!! trans('labels.general.modify_reservation') !!}
                     </h2>
                     <div class="d-flex justify-content-end">
-                        <button type="button" id="cancelReservationBtn" class="btn btn-danger d-none btn-delete mx-3">
-                            {!! trans('labels.general.cancel_reservation') !!}
+                        <button type="button" id="cancelReservationBtn" class="btn btn-danger btn-delete mx-3">
+                            {!! trans('labels.general.cancel') !!}
                         </button>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -39,7 +39,6 @@
                                 <select id="modifyLocation" name="modifyLocation"
                                     placeholder="{{ trans('labels.general.restaurant') }}" class="form-control select2"
                                     required>
-                                    <option selected=""></option>
                                     @foreach ($params->restaurants as $restaurant)
                                         <option value="{{ $restaurant->num }}">
                                             {{ $restaurant->location }}
@@ -54,7 +53,6 @@
                                 <select id="modifyPersons" name="modifyPersons"
                                     placeholder="{{ trans('labels.general.persons_n') }}" class="form-control select2"
                                     required>
-                                    <option selected=""></option>
                                     @for ($i = 0; $i < 4; $i++)
                                         <option value="{{ $i }}">
                                             {{ $i + 1 }}
@@ -72,7 +70,6 @@
                                 <select id="modifyTime" name="modifyTime"
                                     placeholder="{{ trans('labels.general.time') }}" class="form-control select2"
                                     required>
-                                    <option selected=""></option>
                                     @for ($i = 0; $i < 6; $i++)
                                         <option value="{{ ($i == 0) ? '12AM' : ($i * 2) . 'PM' }}">
                                             {{ $i == 0 ? '12AM' : $i * 2 . 'PM' }}
@@ -84,11 +81,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-link2" data-bs-dismiss="modal">
-                        {!! trans('buttons.general.cancel') !!}
-                    </button>
-                    <button type="submit" class="btn btn-primary btn-save">
-                        {!! trans('buttons.general.save') !!}
+                    <button type="submit" id="saveBtn" class="btn btn-primary btn-save">
+                        {!! trans('labels.general.save') !!}
                     </button>
                 </div>
             </div>

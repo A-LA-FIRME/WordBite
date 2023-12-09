@@ -118,7 +118,7 @@ var Reservations = {};
                 allowClear: false,
             });
 
-            $("select2-container").css("width", "100%");
+            $(".select2-container").css("width", "100%");
         },
 
         initDatePicker: function () {
@@ -146,14 +146,14 @@ var Reservations = {};
                 data: requestData,
             });
 
-            if (response.type === "success") {
+            if (response.type == "success") {
                 Swal.fire(
-                    Reservations.codeText + ": " + response.body.text,
+                    Reservations.codeText + ": " + response.body.message,
                     "",
                     "success"
                 );
             } else {
-                Swal.fire(response.body.text, "", "error");
+                Swal.fire(response.body.message, "", "error");
             }
             return;
         },
@@ -174,16 +174,16 @@ var Reservations = {};
                 data: requestData,
             });
 
-            if (response.type === "success") {
+            if (response.type == "success") {
                 var reservation = response.body.reservation;
 
-                ModifyReservationModal.num.val(reservation.num);
-                ModifyReservationModal.name.val(reservation.customer_full_name);
-                ModifyReservationModal.email.val(reservation.customer_email);
-                ModifyReservationModal.location.val(reservation.restaurant_num);
-                ModifyReservationModal.persons.val(reservation.number_persons);
-                ModifyReservationModal.date.val(reservation.date);
-                ModifyReservationModal.time.val(reservation.time);
+                $("#modifyNum").val(reservation.num);
+                $("#modifyLocation").val(reservation.restaurant_num).trigger("change");
+                $("#modifyName").val(reservation.customer_full_name);
+                $("#modifyEmail").val(reservation.customer_email);
+                $("#modifyPersons").val(reservation.number_persons).trigger("change");
+                $("#modifyTime").val(reservation.time).trigger("change");
+                $("#modifyDate").val(reservation.date);
 
                 ModifyReservationModal.bmodal.show();
             } else {

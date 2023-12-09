@@ -38,14 +38,13 @@ mix.copy('resources/assets/img', 'public/img')
 /** mix css */
 mix.styles([
     /** vendor */
+    'resources/vendor/bootstrap/css/bootstrap.min.css',
+    'resources/vendor/select2/css/select2.min.css',
+    'resources/vendor/flatpickr/css/flatpickr.min.css',
     'resources/vendor/animate/css/animate.min.css',
     'resources/vendor/aos/css/aos.css',
-    'resources/vendor/bootstrap/css/bootstrap.min.css',
-    'resources/vendor/flatpickr/css/flatpickr.min.css',
     'resources/vendor/glightbox/css/glightbox.min.css',
-    'resources/vendor/select2/css/select2.min.css',
     'resources/vendor/swal/css/dark.css',
-
     /** */
     'resources/assets/css/style.css',
 ], 'public/css/app.min.css').version();
@@ -53,15 +52,14 @@ mix.styles([
 /** mix js */
 mix.scripts([
     /** vendor */
+    'resources/vendor/jquery/js/jquery-3.7.1.min.js',
+    'resources/vendor/jquery/js/jquery.validate.min.js',
+    'resources/vendor/select2/js/select2.min.js',
     'resources/vendor/aos/js/aos.js',
     'resources/vendor/bootstrap/js/bootstrap.bundle.min.js',
     'resources/vendor/flatpickr/js/flatpickr.js',
     'resources/vendor/glightbox/js/glightbox.min.js',
-    'resources/vendor/jquery/js/jquery-3.7.1.min.js',
-    'resources/vendor/select2/js/select2.min.js',
-    'resources/vendor/jquery/js/jquery.validate.min.js',
     'resources/vendor/swal/js/sweetalert2.min.js',
-
     /** */
     'resources/assets/js/main.js',
 ], 'public/js/app.min.js').version();
