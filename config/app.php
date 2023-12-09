@@ -56,7 +56,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://wordbite.up.railway.app/'),
+    'url' => env('APP_URL', 'https://wordbite.up.railway.app'),
 
     'asset_url' => env('ASSET_URL'),
 

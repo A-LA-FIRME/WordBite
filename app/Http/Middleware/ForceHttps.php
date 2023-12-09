@@ -7,7 +7,7 @@ class ForceHttps
 {
     public function handle($request, Closure $next)
     {
-        if (!$request->secure() && env('APP_ENV') === 'production') {
+        if (!$request->secure() && config('app.env') == 'production') {
             return redirect()->secure($request->getRequestUri());
         }
 

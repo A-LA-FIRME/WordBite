@@ -12,7 +12,8 @@
 */
 
 $app = new Illuminate\Foundation\Application(
-    $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
+    $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__),
+    file_exists(__DIR__.'/../.env.prod') ? 'production' : 'local'
 );
 
 /*
