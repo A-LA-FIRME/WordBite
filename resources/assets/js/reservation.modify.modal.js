@@ -95,7 +95,13 @@ var ModifyReservationModal = {};
         },
 
         initDatePicker: function () {
-            flatpickr("#modifyDate");
+
+            var tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+
+            flatpickr("#modifyDate",{
+                minDate: tomorrow
+            });
         },
 
         modify: async function () {

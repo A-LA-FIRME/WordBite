@@ -122,7 +122,13 @@ var Reservations = {};
         },
 
         initDatePicker: function () {
-            flatpickr("#date");
+
+            var tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+
+            flatpickr("#date",{
+                minDate: tomorrow
+            });
         },
 
         create: async function (params) {

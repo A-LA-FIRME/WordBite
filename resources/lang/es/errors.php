@@ -6,5 +6,6 @@ return [
         "reservation_not_found" => "Reservacion no encontrada",
         "reservation_cancelled" => "La reservacion ha sido cancelada",
         "error_ocurred" => "Ha ocurrido un error inesperado",
+        "modify_success" => "La reservacion se modifico exitosamente",
     ],
 ];
